@@ -1,0 +1,210 @@
+@font-face {
+    font-family: 'Nature Beauty';
+    src: url('./font/Nature Beauty.ttf');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(#AEB8C4, #214358, #9CA6B8);
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Nature Beauty', sans-serif;
+    font-size: 50px;
+    margin: 50px 0 30px 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+#sketchpad {
+    display: grid;
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    margin: 10px auto;
+    box-shadow: 0px 0px 5px black;
+}
+
+.border {
+    border: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+
+#color {
+    cursor: pointer;
+}
+
+#button-black,
+#button-random,
+#button-erase,
+#button-reset,
+#button-toggle {
+
+    display: flex;
+    font-size: 12px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+    background-color: white;
+    box-shadow: 0px 0px 5px black;
+    margin-right: 10px;
+}
+
+#button-black {
+    background-color: black;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.text,
+.icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+}
+
+.icon {
+    font-size: 1.2em;
+    color: white;
+    background-color: #001111;
+}
+
+#button-black,
+#button-random,
+#button-erase,
+#button-reset,
+#button-toggle {
+    width: 140px;
+}
+
+.icon.pen,
+.icon.erase,
+.icon.reset {
+    margin-left: 13px;
+}
+
+.icon.random {
+    margin-left: 6px;
+}
+
+.icon.pen {
+    color: black;
+    background-color: white;
+}
+
+.icon.toggle {
+    margin-left: 5px;
+}
+
+.text.pen {
+    margin-left: 6px;
+    color: white;
+}
+
+.text.erase,
+.text.reset {
+    margin-left: 8px;
+    color: #000C66;
+}
+
+.text.toggle {
+    margin-left: 4px;
+    color: #000C66;
+}
+
+.text.random {
+    color: #000C66;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    width: 750px;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+#range {
+    width: 180px;
+    color: blue;
+}
+
+.dimension {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 700;
+    color: black;
+}
+
+
+@media (max-width: 650px) {
+    #sketchpad {
+        height: 300px;
+        width: 300px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 375px;
+        gap: 15px;
+    }
+
+}
+
+@media (max-width: 1910px) {
+    #color:before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        left: 47.9%;
+        top: 70.9%;
+        background: url('./image/pen.png');
+        position: absolute;
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width: 1920px),
+screen and (max-height: 969px) !important {
+    #color:before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        left: 47.9%;
+        top: 70.9%;
+        background: url('./image/pen.png');
+        position: absolute;
+    }
+}
