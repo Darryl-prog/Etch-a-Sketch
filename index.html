@@ -24,18 +24,19 @@
             <input class="range" type="range" name="" id="range" value="32" min="2" max="64">
             <span id="dimension"></span>
         </div>
+    </div>
 
-        <div class="color-picker">
-            <input id="color" type="color" name="" id="color" value="#00FBFF">
-        </div>
+    <div class="color-picker" style="text-align: center; margin-top: 10px;">
+        <label for="create-color" style="width: 200px">
+            <i class="fas fa-palette"></i>
+            <input type="color" id="create-color" style="visibility:hidden" value="#03f13e">
+        </label>
     </div>
 
 
-
-
     <div class="buttons">
-        <button id="button-black" type="button" class="button">
-            <span class="text pen">BLACK</span>
+        <button id="button-pen" type="button" class="button">
+            <span class="text pen">COLOR</span>
             <span class="icon pen">
                 <ion-icon name="pencil-outline"></ion-icon>
             </span>
@@ -66,12 +67,26 @@
             </span>
         </button>
     </div>
+    <!-- 
+    <label for="create-color">
+        <i class="fas fa-palette"></i>
+        <input type="color" id="create-color" style="display: none" list='mycolors'
+            onChange='this.previousElementSibling.style.color=this.value'>
+    </label>
 
+    <datalist id="mycolors">
+        <option>#FF0000</option>
+        <option>#00FF00</option>
+        <option>#0000FF</option>
+    </datalist> -->
+
+    <!-- <button class="select">Select</button> -->
 
 
 </body>
 <script src="app.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://kit.fontawesome.com/759132f7cd.js" crossorigin="anonymous"></script>
 
 </html>

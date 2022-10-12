@@ -1,12 +1,11 @@
 
-let color = '#10D7DA'; // default color
+let color = 'black'; // default color
 
 let size = 32; //default dimension
 
 let mouseDown = false; //default
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
-const p = document.createElement('p');
 
 
 const defaultSize = () => {
@@ -31,8 +30,6 @@ const defaultSize = () => {
         sketchpad.appendChild(squares);
     }
 }
-
-
 
 const changeSize = (size) => {
     const sketchpad = document.querySelector('#sketchpad');
@@ -70,8 +67,10 @@ const paint = function (e) {
             const color = `rgb(${colorR}, ${colorG}, ${colorB}, 0.8)`;
             this.style.background = color;
             document.querySelector('#button-random').style.background = color;
-        } else if (color === 'picker') {
-            color = document.querySelector(`input[type='color']`).value;
+        }
+        else if (color === 'select') {
+            const color = document.querySelector(`input[type='color']`).value;
+            console.log(color);
             this.style.background = color;
         }
         else {
@@ -88,8 +87,8 @@ const paint = function (e) {
             this.style.background = color;
             document.querySelector('#button-random').style.background = color;
         }
-        else if (color === 'picker') {
-            color = document.querySelector(`input[type='color']`).value;
+        else if (color === 'select') {
+            const color = document.querySelector(`input[type='color']`).value;
             this.style.background = color;
         }
         else {
@@ -98,11 +97,9 @@ const paint = function (e) {
     }
 }
 
-
 const changeColor = function (choice) {
     color = choice;
 }
-
 
 const reset = function () {
     const squares = document.querySelectorAll('.square');
@@ -114,14 +111,19 @@ const toggle = function () {
     squares.forEach((div) => div.classList.toggle('border'));
 }
 
+const colorSelector = function () {
+    color = `${this.value}`;
+    document.querySelector('.fas').style.background = `${this.value}`;
+    document.querySelector('#button-pen').style.background = `${this.value}`;
 
+}
 
 //Event listeners
 document.querySelector(`input[type='range']`).addEventListener('change', sizeInput);
-document.querySelector('#button-black').addEventListener('click', () => changeColor('black'));
+document.querySelector(`input[type='color']`).addEventListener('change', colorSelector);
+document.querySelector('#button-pen').addEventListener('click', () => changeColor('select'));
 document.querySelector('#button-erase').addEventListener('click', () => changeColor('white'));
 document.querySelector('#button-random').addEventListener('click', () => changeColor('random'));
-document.querySelector(`input[type='color']`).addEventListener('click', () => changeColor('picker'));
 document.querySelector('#button-reset').addEventListener('click', reset);
 document.querySelector('#button-toggle').addEventListener('click', toggle);
 
